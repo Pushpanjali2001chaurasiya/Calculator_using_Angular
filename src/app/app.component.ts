@@ -9,5 +9,18 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'cal';
+stringtoEvaluate: string='';
+
+takeinput(num:string){
+this.stringtoEvaluate=this.stringtoEvaluate + num;
+}
+
+evaluateresult(){
+  if(this.stringtoEvaluate !=''){
+    this.stringtoEvaluate=eval(this.stringtoEvaluate);
+  }
+}
+resetevaluate(){
+  this.stringtoEvaluate=" ";
+}
 }
